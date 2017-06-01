@@ -15,6 +15,5 @@ public class LoginController {
 
 		model.put("message",message);
 		return "login";
-//change after GIT config		
 	}
 }
