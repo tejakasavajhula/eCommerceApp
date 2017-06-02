@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/lumen/bootstrap.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -16,7 +16,7 @@ function noBack(){
     </script>
 
     <!--To check user credential by Rest Link-->
-    <script src="js/Login.js"></script>
+    <script src="js/login.js"></script>
     
     <title>ECommerce Portal</title>
 </head>
@@ -41,7 +41,7 @@ function noBack(){
             </tr>
         </table>
     </div>
-        <h3><font color="green">New user? <a href="Register.html">Click here to Register</a></font></h3>
+        <h3><font>New user? <a href="register">Click here to Register</a></font></h3>
    
 </body>
 </html>
