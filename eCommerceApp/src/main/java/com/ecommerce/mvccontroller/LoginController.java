@@ -16,4 +16,27 @@ public class LoginController {
 		model.put("message",message);
 		return "login";
 	}
+	
+	@RequestMapping("/login")
+	public String login1(Map<String, Object> model) {
+
+		model.put("message",message);
+		return "login";
+	}
+	
+	@RequestMapping("/register")
+	public String Register(Map<String, Object> model) {
+
+		model.put("message",message);
+		return "register";
+	}
+	
+	@RequestMapping("/home")
+	public String home(Map<String, Object> model) {
+
+		model.put("message",message);
+		return "home";
+	}
+	
+	
 }

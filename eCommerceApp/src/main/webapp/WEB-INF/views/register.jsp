@@ -59,6 +59,7 @@
 				<td colspan="2"><input type="button" name="doRegister" id="doRegister" /></td>
 			</tr>
 		</table>
+		<h2>If alreayd registered please <a href="/login">click here</a></h2>
 	</div>
 </body>
 </html>

@@ -41,7 +41,7 @@ function noBack(){
             </tr>
         </table>
     </div>
-        <h3><font>New user? <a href="register">Click here to Register</a></font></h3>
+        <h3><font>New user? <a href="/register">Click here to Register</a></font></h3>
    
 </body>
 </html>

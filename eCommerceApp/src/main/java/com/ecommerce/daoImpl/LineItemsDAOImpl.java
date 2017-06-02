@@ -24,18 +24,17 @@ public class LineItemsDAOImpl implements LineItemsDAO{
 	public List<Line_Items> listAllLines() {
 		return entityManager.createQuery("from Line_Items").getResultList();
 	}
-
 	
 	@Override
 	public void removeLine(int line_id) {
 		try {
-			String hql="From Line_Items where line_id=:line_id and user=:user";
+			String hql="From Line_Items where line_id=:line_id";
 			Line_Items line = (Line_Items) entityManager.createQuery(hql)
 														.setParameter("line_id", line_id)
 														.getSingleResult();
-			Product p = line.getProduct();
+			line.setProduct(new Product());
+			entityManager.merge(line);
 			entityManager.remove(line);
-			entityManager.persist(p);
 		}
 		catch(Exception e){
 			System.out.println("The line cannot be removed yet as it is still present in a user's cart");

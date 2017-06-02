@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ecommerce.model.Line_Items;
 import com.ecommerce.model.Orders;
 import com.ecommerce.model.Users;
+import com.ecommerce.service.LineService;
 import com.ecommerce.service.UserService;
 
 @RestController
@@ -21,6 +22,9 @@ public class UserController {
 
 	@Autowired
 	UserService userservice;
+
+	@Autowired
+	LineService lineservice;
 
 	@RequestMapping(value="/getAllUsers",method=RequestMethod.GET)
 	public ResponseEntity<List<Users>> getAllUsers() {
@@ -107,6 +111,7 @@ public class UserController {
 	public ResponseEntity<String> removeCartLine(@PathVariable String username, @PathVariable int line_id) {
 		try {
 			userservice.removeLinefromCart(username, line_id);
+			lineservice.removeLine(line_id);
 			return new ResponseEntity<String>("Success",HttpStatus.OK);
 		}catch (Exception e) {
 			System.out.println("error deleting");
