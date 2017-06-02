@@ -43,6 +43,14 @@ public class Line_Items implements Serializable{
 		this.price_per_line = product.getPrice()*quantity;
 	}
 
+	public int getLine_id() {
+		return line_id;
+	}
+
+	public void setLine_id(int line_id) {
+		this.line_id = line_id;
+	}
+
 	public Product getProduct() {
 		return product;
 	}

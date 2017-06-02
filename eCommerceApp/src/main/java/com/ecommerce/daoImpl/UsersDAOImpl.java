@@ -88,20 +88,40 @@ public class UsersDAOImpl implements UsersDAO {
 	@Override
 	public void addLineToCart(String username, Line_Items line) {
 
+		
 		String hql = "From Product where name=:name and supplier=:supplier and price=:price";
 		Product prod = (Product) entityManager.createQuery(hql).setParameter("name", line.getProduct().getName())
 				.setParameter("supplier", line.getProduct().getSupplier())
 				.setParameter("price", line.getProduct().getPrice()).getSingleResult();
-
-		if (prod != null) {
+		
+		String hql1 = "From Users where username=:username";
+		Users user = (Users) entityManager.createQuery(hql1).setParameter("username", username).getSingleResult();
+		
+		int id=0;
+		Line_Items line1=null;
+		List<Line_Items> list = user.getLine_items();
+		for (Line_Items line_Items : list) {
+			if(line_Items.getProduct().getId() == line.getProduct().getId()){
+				id=line_Items.getLine_id();
+				line1=line_Items;
+			}
+		}
+		if (prod != null && id==0) {
 			int p = line.getQuantity() * line.getProduct().getPrice();
 			line.setPrice_per_line(p);
-			String hql1 = "From Users where username=:username";
-			Users user = (Users) entityManager.createQuery(hql1).setParameter("username", username).getSingleResult();
-			List<Line_Items> list = user.getLine_items();
 			list.add(line);
 			user.setLine_items(list);
 			entityManager.merge(user);
+		}
+		
+		else if(prod!=null && id!=0){
+			entityManager.createQuery("Update Line_Items set quantity=:q + :q1, price_per_line = :p1+:p2 where line_id=:id")
+						 .setParameter("q", line1.getQuantity())
+						 .setParameter("q1", line.getQuantity())
+						 .setParameter("p1", line1.getPrice_per_line())
+						 .setParameter("p2", line.getQuantity() * prod.getPrice())
+						 .setParameter("id", id)
+						 .executeUpdate();
 		}
 		else{
 			System.out.println("The entered product does not exist in database");
