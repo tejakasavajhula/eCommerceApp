@@ -14,8 +14,6 @@ function noBack(){
 	window.history.forward();
         }
     </script>
-
-    <!--To check user credential by Rest Link-->
     <script src="js/login.js"></script>
     
     <title>ECommerce Portal</title>

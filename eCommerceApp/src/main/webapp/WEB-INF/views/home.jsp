@@ -33,10 +33,12 @@ margin:2px 0 -20px 0 !important;
 
 
 </style>
-    <script src="js/home.js"></script>
+
+<script src="js/home.js"></script>
 
 </head>
 <body onLoad="noBack();">
+<h2 id="message3"></h2>
 <h2 align="center">E-Commerce Application Home Page</h2><br>
 <div id="menuList">
 <ul>
