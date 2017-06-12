@@ -21,8 +21,9 @@
 
 </head>
 <body onLoad="noBack();">
-	<h1>Welcome</h1><br><br>
+	<h1>Welcome <%=request.getParameter("name") %></h1><br><br>
 	<div align="left">
+	<form>
 		   <table>
 		   		<tr>
 		   			<th>ID</th>
@@ -41,7 +42,8 @@
 		   		</tr>
 		   		</c:forEach>
 		   		
-		   </table>			    
+		   </table>
+		  </form>			    
 	</div>
 </body>
 </html>
