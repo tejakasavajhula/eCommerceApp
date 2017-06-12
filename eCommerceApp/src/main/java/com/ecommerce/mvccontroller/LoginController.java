@@ -9,14 +9,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ecommerce.model.Orders;
 import com.ecommerce.model.Product;
 import com.ecommerce.service.ProductService;
+import com.ecommerce.service.UserService;
 
 @Controller
 public class LoginController {
 
 	@Autowired
 	private ProductService p;
+	
+	@Autowired
+	private UserService u;
 
 	private String message = "Welcome to eCommerce Application Portal";
 	
@@ -57,12 +62,12 @@ public class LoginController {
 		return "product";
 	}
 
-	@RequestMapping("/viewOrders")
-	public String viewOrders(Model model) {
+	@RequestMapping("/viewOrders/{username}")
+	public String viewOrders(Model model,@PathVariable String username) {
 
-		List<Product> list1 = p.listAllProducts();
-		model.addAttribute("list",list1);
-		return "home";
+		List<Orders> list1 = u.getOrdersForUser(username);
+		model.addAttribute("list1",list1);
+		return "vieworders";
 	}
 
 }

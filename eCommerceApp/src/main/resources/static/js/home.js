@@ -1,9 +1,9 @@
 $(document).ready(function () {
     $("#home").click(function () {
-    	window.location = '/home';
+    	window.location = '/home'+"?name="+username;
     });
     $("#viewCart").click(function () {
-    	var username = request.getParameter("name");
+    	var username = $("#username").val();
 		var url= "http://localhost:8080/getCart/"+username;
     	$.get(url,function(data){
     		window.location = '/viewCart'+"?name="+username;
@@ -11,13 +11,10 @@ $(document).ready(function () {
     });
     $("#viewOrders").click(function () {
     	var username = $("#username").val();
-    	var msg="";
-    	var url= "http://localhost:8080/getOrders/"+username;
-    	$.get(url,function(data){
-    		window.location = '/viewOrders'+"?name="+username;
+    	window.location = '/viewOrders/'+username;
     });
     $("#updateUser").click(function () {
-    	var username = $("#name").val();
+    	var username = $("#username").val();
     	var quantity = $("#quantity").val();
     	var json = {"product":{},"quantity":quantity};
     	var msg="";
@@ -52,12 +49,12 @@ $(document).ready(function () {
     		data:JSON.stringify(json),
     		success: function(data){
     			msg = "Product added to the cart";
-    			window.location = '/home';
+    			window.location = '/home'+"?name="+username;
     			$("#message3").html(msg);
     		},
     		error: function(data){
     			msg = "Data entered is incorrect";
-    			window.location = '/home';
+    			window.location = '/home'+"?name="+username;
     			$("#message3").html(msg);
     		}
     	});

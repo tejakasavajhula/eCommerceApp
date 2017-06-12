@@ -6,7 +6,7 @@ $(document).ready(function () {
         
         $.get(url, function(data, status){
             	if(data.username==username && data.pwd==pass){
-            		window.location = "/home"+"?name="+username;
+            		window.location = "/home/"+"?name="+username;
             	}
             	else{
                     alert("Invalid username/password");            		
