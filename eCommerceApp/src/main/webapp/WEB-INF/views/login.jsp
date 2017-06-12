@@ -24,6 +24,7 @@ function noBack(){
     <h1 align="center">Welcome ECommerce Online shopping portal</h1>
     <h2 align="center">User's Login Page:</h2>
     <h2 id="message" style="color:red"></h2>
+    <h2 id="message2" style="color:green"></h2>
     <div align="center">
         <table>
             <tr>
