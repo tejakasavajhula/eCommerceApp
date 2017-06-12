@@ -57,4 +57,12 @@ public class LoginController {
 		return "product";
 	}
 
+	@RequestMapping("/viewOrders")
+	public String viewOrders(Model model) {
+
+		List<Product> list1 = p.listAllProducts();
+		model.addAttribute("list",list1);
+		return "home";
+	}
+
 }

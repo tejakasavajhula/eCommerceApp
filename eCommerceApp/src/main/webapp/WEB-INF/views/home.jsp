@@ -54,6 +54,8 @@ margin:2px 0 -20px 0 !important;
 	<h1>Welcome <%=request.getParameter("name")%></h1><br><br>
 	
 	<form>
+		<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
+	
 		   <ul>
 		   		<c:forEach var="product" items="${list}">
 		   		

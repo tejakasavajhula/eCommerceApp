@@ -25,8 +25,8 @@ h2 {
 	margin: 2px 0 -20px 0 !important;
 }
 </style>
-<script src="js/home.js"></script>
-<script src="js/addcart.js"></script>
+<script src="/js/home.js"></script>
+<script src="/js/addcart.js"></script>
 
 </head>
 <body>
@@ -42,20 +42,23 @@ h2 {
 			<li><input type="button" value="Update User Address"
 				id="updateAddress"></li>
 		</ul>
-	</div>
+	</div><br>
+	<h3>Welcome <%=request.getParameter("name")%></h3>
 	<div align="left">
 		<form>
+				<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
+				<input type="hidden" id="ID" value="${prod.id}"></input>
+				<input type="hidden" id="NAME" value="${prod.name}"></input>
+				<input type="hidden" id="Supplier" value="${prod.supplier}"></input>
+				<input type="hidden" id="Price" value="${prod.price}"></input>				
 			<ul>
-
 				<li><img src="/images/${prod.id}.jpg" width="500" height="500"></li>
-				<li id="ID">${prod.id}</li>
-				<li id="NAME">${prod.name}</li>
-				<li id="Supplier">${prod.supplier}</li>
-				<li id="Price">${prod.price}</li>
-				<li><input type="text" name="quantity"
-					placeholder="Enter quantity" id="quantity"></li>
+				<li>${prod.id}</li>
+				<li>${prod.name}</li>
+				<li>${prod.supplier}</li>
+				<li>${prod.price}</li>
+				<li><input type="text" name="quantity" placeholder="Enter quantity" id="quantity"></li>
 				<li><input type="button" value="Add To Cart" id="AddToCart"></li>
-				<p>-------------------------------------------------------------------------------------------------</p>
 			</ul>
 		</form>
 	</div>
