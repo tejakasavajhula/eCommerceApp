@@ -19,7 +19,7 @@ $("#AddToCart").click(function () {
     		},
     		error: function(data){
     			msg = "Data entered is incorrect";
-    			window.location = '/viewProduct'++"?name="+username+'/'+id;
+    			window.location = "/viewProduct/"+id+"?name="+username;
     			$("#message").html(msg);
     		}
     	});

@@ -29,6 +29,7 @@ h2 {
 
 </head>
 <body>
+<br>
 	<h2 align="center">E-Commerce Application Home Page</h2>
 	<br>
 	<div id="menuList">
@@ -43,7 +44,6 @@ h2 {
 		</ul>
 	</div><br>
 	<div align="left">
-	<h1>Welcome <%=request.getParameter("name")%></h1><br><br>
 	
 	<form>
 		<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
@@ -51,15 +51,14 @@ h2 {
 		   <ul>
 		   		<c:forEach var="order" items="${list1}">
 		   		
-		   			<li>${order.order_id} </li>
-		   			<li>${order.order_value}</li>
-		   			<li>${order.order_date}</li>
-		   			<li>${order.ship_date}</li>
-		   			<li>${order.status}</li>
+		   			<li>Order ID : ${order.order_id} </li>
+		   			<li>Order value : ${order.order_value}</li>
+		   			<li>Order Date : ${order.order_date}</li>
+		   			<li>Ship Date : ${order.ship_date}</li>
+		   			<li>Status : ${order.status}</li>
 		   			<p>-------------------------------------------------------------------------------------------------</p>
 		   		</c:forEach>		
 		   </ul>
-		   <li><a href="/home/?name=<%=request.getParameter("name")%>">Back Home</a></li>
 		  </form>			    
 	</div>
 

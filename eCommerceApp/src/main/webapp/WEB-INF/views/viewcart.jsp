@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,11 +27,10 @@ h2 {
 }
 </style>
 <script src="/js/home.js"></script>
-<script src="/js/addcart.js"></script>
 
 </head>
 <body>
-<br>
+	<br>
 	<h2 align="center">E-Commerce Application Home Page</h2>
 	<br>
 	<div id="menuList">
@@ -38,30 +38,30 @@ h2 {
 			<li><input type="button" value="home" id="home"></li>
 			<li><input type="button" value="viewCart" id="viewCart"></li>
 			<li><input type="button" value="viewOrders" id="viewOrders"></li>
-			<li><input type="button" value="Update User Profile"
-				id="updateUser"></li>
-			<li><input type="button" value="Update User Address"
-				id="updateAddress"></li>
+			<li><input type="button" value="Update User Profile" id="updateUser"></li>
+			<li><input type="button" value="Update User Address" id="updateAddress"></li>
 		</ul>
-	</div><br>
-	<h3>Welcome <%=request.getParameter("name")%></h3>
+	</div>
+	<br>
 	<div align="left">
 		<form>
-				<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
-				<input type="hidden" id="ID" value="${prod.id}"></input>
-				<input type="hidden" id="NAME" value="${prod.name}"></input>
-				<input type="hidden" id="Supplier" value="${prod.supplier}"></input>
-				<input type="hidden" id="Price" value="${prod.price}"></input>				
+			<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
+
 			<ul>
-				<li><img src="/images/${prod.id}.jpg" width="500" height="500"></li>
-				<li>${prod.id}</li>
-				<li>${prod.name}</li>
-				<li>${prod.supplier}</li>
-				<li>${prod.price}</li>
-				<li><input type="text" name="quantity" placeholder="Enter quantity" id="quantity"></li>
-				<li><input type="button" value="Add To Cart" id="AddToCart"></li>
+				<c:forEach var="line" items="${list2}">
+
+					<li>Line ID : ${line.line_id}</li>
+					<li>Product : ${line.product}</li>
+					<li>Quantity : ${line.quantity}</li>
+					<li>Price : ${line.price_per_line}</li>
+					<li><input type ="button" value="Update Line" id="updateLine"></li>
+					<li><input type ="button" value="Delete Line" id="deleteLine"></li>
+					<p>-------------------------------------------------------------------------------------------------</p>
+				</c:forEach>
 			</ul>
+			<br><input type ="button" value="Clear Cart" id="deleteCart">
 		</form>
 	</div>
+
 </body>
 </html>
