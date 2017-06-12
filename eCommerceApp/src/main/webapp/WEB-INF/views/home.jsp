@@ -21,28 +21,30 @@
 
 </head>
 <body onLoad="noBack();">
+<div id="menuList">
+<ul>
+<li><input type="button" value="home" id="home"></li>
+<li><input type="button" value="viewCart" id="viewCart"></li>
+<li><input type="button" value="viewOrders" id="viewOrders"></li>
+</ul>
+</div>
 	<h1>Welcome <%=request.getParameter("name") %></h1><br><br>
 	<div align="left">
 	<form>
-		   <table>
-		   		<tr>
-		   			<th>ID</th>
-		   			<th>Name</th>
-		   			<th>Supplier</th>
-		   			<th>Price</th>
-		   		</tr>
+		   <ul>
 		   		<c:forEach var="product" items="${list}">
-		   		<tr>
-		   			<td>${product.id} &nbsp</td>
-		   			<td>${product.name}&nbsp</td>
-		   			<td>${product.supplier}&nbsp</td>
-		   			<td>${product.price}&nbsp</td>
-		   			<td><input type="text" name="quantity" placeholder = "Enter quantity required here" id="quantity"></td>
-		   			<td><input type="button" value="Add To Cart" name="AddToCart" id="AddToCart"></td>
-		   		</tr>
+		   		
+		   			<li><img src = "/images/${product.id}.jpg" width="200" height="200"></li>
+		   			<li>${product.id} &nbsp</li>
+		   			<li>${product.name}&nbsp</li>
+		   			<li>${product.supplier}&nbsp</li>
+		   			<li>${product.price}&nbsp</li>
+		   			<li><input type="text" name="quantity" placeholder = "Enter quantity required here" id="quantity"></li>
+		   			<li><input type="button" value="Add To Cart" name="AddToCart" id="AddToCart"></li>
+		   			<p>-------------------------------------------------------------------------------------------------</p>
 		   		</c:forEach>
 		   		
-		   </table>
+		   </ul>
 		  </form>			    
 	</div>
 </body>
