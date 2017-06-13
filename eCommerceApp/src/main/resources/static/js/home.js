@@ -23,5 +23,9 @@ $(document).ready(function () {
     	var username = $("#username").val();
     	window.location = '/updateUser/'+username+"?name="+username;
     });
+    $("#logout").click(function () {
+    	var username = $("#username").val();
+    	window.location = '/logout';
+    });
 });
 

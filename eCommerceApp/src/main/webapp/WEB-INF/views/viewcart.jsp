@@ -43,6 +43,7 @@ h2 {
 			<li><input type="button" value="viewOrders" id="viewOrders"></li>
 			<li><input type="button" value="Update User Profile" id="updateUser"></li>
 			<li><input type="button" value="Update User Address" id="updateAddress"></li>
+			<li><input type="button" value="Logout" id="logout"></li>
 		</ul>
 	</div>
 	<br>

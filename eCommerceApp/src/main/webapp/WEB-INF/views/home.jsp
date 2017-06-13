@@ -12,10 +12,11 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <script type="text/javascript">
+window.history.forward();
+function noBack(){
 	window.history.forward();
-	function noBack() {
-		window.history.forward();
-	}
+        }
+
 </script>
 	<title>User Home Page</title>
 <style>
@@ -31,7 +32,9 @@ font-size:80px;
 margin:2px 0 -20px 0 !important;
 }
 
-
+#home #viewCart #viewOrders #updateUser #updateAddress .button input :hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 </style>
 
 <script src="/js/home.js"></script>
@@ -47,6 +50,7 @@ margin:2px 0 -20px 0 !important;
 <li><input type="button" value="viewOrders" id="viewOrders"></li>
 <li><input type="button" value="Update User Profile" id="updateUser"></li>
 <li><input type="button" value="Update User Address" id="updateAddress"></li>
+<li><input type="button" value="Logout" id="logout"></li>
 </ul>
 </div>
 
