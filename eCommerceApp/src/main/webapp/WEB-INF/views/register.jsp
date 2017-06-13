@@ -48,6 +48,8 @@ th {
 </head>
 <body>
 <title>eCommerce Application Registration Page</title>
+<h1 align="center">Welcome ECommerce Online shopping portal</h1><br><br>
+
 <h2 id="message" style="color:red"></h2>
 	<div align="center">
 		<form action = "doRegister">
