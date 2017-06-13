@@ -61,7 +61,6 @@ th {
 			<li><input type="button" value="Logout" id="logout"></li>
 		</ul>
 	</div><br>
-	<h3>Welcome <%=request.getParameter("name")%></h3><br><br>
 	<div align="left">
 		<form>
 			<table align="center">
