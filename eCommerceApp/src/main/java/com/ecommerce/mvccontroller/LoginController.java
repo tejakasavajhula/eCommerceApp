@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.ecommerce.model.Line_Items;
 import com.ecommerce.model.Orders;
 import com.ecommerce.model.Product;
+import com.ecommerce.model.Users;
 import com.ecommerce.service.LineService;
 import com.ecommerce.service.ProductService;
 import com.ecommerce.service.UserService;
@@ -81,6 +82,14 @@ public class LoginController {
 		List<Line_Items> list2 = u.getUserCart(username);
 		model.addAttribute("list2",list2);
 		return "viewcart";
+	}
+
+	@RequestMapping("/updateUser/{username}")
+	public String updateUser(Model model,@PathVariable("username") String username) {
+
+		Users user = u.getUserByName(username);
+		model.addAttribute("user",user);
+		return "updateUser";
 	}
 
 }

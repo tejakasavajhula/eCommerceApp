@@ -15,12 +15,12 @@ $("#AddToCart").click(function () {
     		success: function(data){
     			msg = "Product added to the cart";
     			window.location = "/home"+"?name="+username;
-    			$("#message").html(msg);
+    			$("#message4").html(msg);
     		},
     		error: function(data){
     			msg = "Data entered is incorrect";
     			window.location = "/viewProduct/"+id+"?name="+username;
-    			$("#message").html(msg);
+    			$("#message4").html(msg);
     		}
     	});
     });

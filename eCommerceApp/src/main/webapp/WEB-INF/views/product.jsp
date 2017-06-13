@@ -33,6 +33,8 @@ h2 {
 <br>
 	<h2 align="center">E-Commerce Application Home Page</h2>
 	<br>
+	<h2 id="message4"></h2><br>
+	
 	<div id="menuList">
 		<ul>
 			<li><input type="button" value="home" id="home"></li>

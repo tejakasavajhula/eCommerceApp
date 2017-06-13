@@ -16,49 +16,12 @@ $(document).ready(function () {
     });
     $("#updateUser").click(function () {
     	var username = $("#username").val();
-    	var quantity = $("#quantity").val();
-    	var json = {"product":{},"quantity":quantity};
-    	var msg="";
-    	$.ajax({
-    		type: 'POST',
-    		contentType: 'application/json',
-    		url: "http://localhost:8080/addCartLine"+"/"+username,
-    		//dataType: "json",
-    		data:JSON.stringify(json),
-    		success: function(data){
-    			msg = "Product added to the cart";
-    			window.location = '/home';
-    			$("#message3").html(msg);
-    		},
-    		error: function(data){
-    			msg = "Data entered is incorrect";
-    			window.location = '/home';
-    			$("#message3").html(msg);
-    		}
-    	});
+    	window.location = '/updateUser/'+username+"?name="+username;
+		
     });
     $("#updateAddress").click(function () {
     	var username = $("#username").val();
-    	var quantity = $("#quantity").val();
-    	var json = {"product":{},"quantity":quantity};
-    	var msg="";
-    	$.ajax({
-    		type: 'POST',
-    		contentType: 'application/json',
-    		url: "http://localhost:8080/addCartLine"+"/"+username,
-    		//dataType: "json",
-    		data:JSON.stringify(json),
-    		success: function(data){
-    			msg = "Product added to the cart";
-    			window.location = '/home'+"?name="+username;
-    			$("#message3").html(msg);
-    		},
-    		error: function(data){
-    			msg = "Data entered is incorrect";
-    			window.location = '/home'+"?name="+username;
-    			$("#message3").html(msg);
-    		}
-    	});
+    	window.location = '/updateUser/'+username+"?name="+username;
     });
 });
 

@@ -27,12 +27,15 @@ h2 {
 }
 </style>
 <script src="/js/home.js"></script>
+<script src="/js/cart.js"></script>
 
 </head>
 <body>
 	<br>
 	<h2 align="center">E-Commerce Application Home Page</h2>
 	<br>
+	<h2 id="message5"></h2><br>
+	
 	<div id="menuList">
 		<ul>
 			<li><input type="button" value="home" id="home"></li>
@@ -47,18 +50,31 @@ h2 {
 		<form>
 			<input type="hidden" id="username" value="<%=request.getParameter("name")%>"></input>
 
+			<c:forEach var="line" items="${list2}">
+				<input type="hidden" id="lineId" value="${line.line_id}"></input>
+				<input type="hidden" id="prodId" value="${line.product.id}"></input>
+				<input type="hidden" id="prodName" value="${line.product.name}"></input>
+				<input type="hidden" id="prodSupplier" value="${line.product.supplier}"></input>
+				<input type="hidden" id="prodPrice" value="${line.product.price}"></input>				
+				<input type="hidden" id="lineQuantity" value="${line.quantity}"></input>				
+				<input type="hidden" id="linePrice" value="${line.price_per_line}"></input>				
+				
 			<ul>
-				<c:forEach var="line" items="${list2}">
-
+				
+					<li><img src="/images/${line.product.id}.jpg" width="500" height="500"></li>
 					<li>Line ID : ${line.line_id}</li>
-					<li>Product : ${line.product}</li>
+					<li>Product ID : ${line.product.id}</li>
+					<li>Product Name : ${line.product.name}</li>
+					<li>Product Supplier : ${line.product.supplier}</li>
+					<li>Product Price : ${line.product.price}</li>
 					<li>Quantity : ${line.quantity}</li>
 					<li>Price : ${line.price_per_line}</li>
-					<li><input type ="button" value="Update Line" id="updateLine"></li>
+					<li><input type="number" id="Quantity"></input>&nbsp &nbsp			
+					<input type ="button" value="Update Line" id="updateLine"></input></li>
 					<li><input type ="button" value="Delete Line" id="deleteLine"></li>
 					<p>-------------------------------------------------------------------------------------------------</p>
-				</c:forEach>
 			</ul>
+		</c:forEach>
 			<br><input type ="button" value="Clear Cart" id="deleteCart">
 		</form>
 	</div>
