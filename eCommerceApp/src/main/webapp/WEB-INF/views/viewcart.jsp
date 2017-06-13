@@ -76,6 +76,7 @@ h2 {
 			</ul>
 		</c:forEach>
 			<br><input type ="button" value="Clear Cart" id="deleteCart">
+			<br><input type ="button" value="Checkout" id="Checkout">
 		</form>
 	</div>
 
