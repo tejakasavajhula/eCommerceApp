@@ -11,13 +11,12 @@
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
 window.history.forward();
 function noBack(){
 	window.history.forward();
         }
-
-</script>
+    </script>
 	<title>User Home Page</title>
 <style>
 
