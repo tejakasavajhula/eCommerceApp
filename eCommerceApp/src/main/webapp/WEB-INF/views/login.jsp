@@ -14,13 +14,42 @@ function noBack(){
 	window.history.forward();
         }
     </script>
+    <style>
+#menuList ul li {
+	display: inline;
+	position: relative;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 80px;
+	margin: 2px 0 -20px 0 !important;
+}
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+</style>
+    
     <script src="js/login.js"></script>
     
     <title>ECommerce Portal</title>
 </head>
 <body onLoad="noBack();">
     <h1 align="center">Welcome ECommerce Online shopping portal</h1>
-    <h2 align="center">User's Login Page:</h2>
+    <h3 align="center">User's Login Page:</h3><br><br>
     <h2 id="message" style="color:red"></h2>
     <h2 id="message2" style="color:green"></h2>
     <div align="center">

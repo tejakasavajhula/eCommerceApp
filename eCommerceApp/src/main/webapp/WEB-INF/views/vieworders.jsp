@@ -24,6 +24,22 @@ h2 {
 	font-size: 80px;
 	margin: 2px 0 -20px 0 !important;
 }
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
 </style>
 <script src="/js/home.js"></script>
 
